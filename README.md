@@ -7,7 +7,7 @@ Cheatsheet has three columns:
 2. Description
 3. Example
 
-See [./phyloseq.org] for the cheatsheet.
+See [phyloseq.org](./phyloseq.org) for the cheatsheet.
 
 ## License
 

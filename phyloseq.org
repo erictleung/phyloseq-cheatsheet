@@ -1,0 +1,6 @@
+| Type    | Function         | Description          | Example                |
+|---------+------------------+----------------------+------------------------|
+| Data    | ~enterotype~      |                      | ~data(enterotype)~     |
+| Data    | ~GlobalPatterns~ |                      | ~data(GlobalPatterns)~ |
+| Wrangle | ~psmelt~         | Change to data frame | ~psmelt(esophagus)~    |
+| Data    | ~esophagus~      | Subset of esophageal | ~data(esophagus)~      |

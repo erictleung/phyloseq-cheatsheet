@@ -2,10 +2,12 @@
 
 Minimal cheatsheet for functions in the phyloseq R package.
 
-Cheatsheet has three columns:
-1. Function
-2. Description
-3. Example
+Cheatsheet has four columns:
+1. **Type** = Data, Wrangle, Plot
+2. **Function** = Function as called in script
+3. **Description** = Terse description of function
+4. **Example** = Minimal code example to demonstrate function; will often make
+   use of built-in data from `phyloseq`
 
 See [phyloseq.org](./phyloseq.org) for the cheatsheet.
 

@@ -2,5 +2,5 @@
 |---------+------------------+----------------------+------------------------|
 | Data    | ~enterotype~     |                      | ~data(enterotype)~     |
 | Data    | ~GlobalPatterns~ |                      | ~data(GlobalPatterns)~ |
-| Wrangle | ~psmelt~         | Change to data frame | ~psmelt(esophagus)~    |
 | Data    | ~esophagus~      | Subset of esophageal | ~data(esophagus)~      |
+| Wrangle | ~psmelt~         | Change to data frame | ~psmelt(esophagus)~    |

@@ -9,7 +9,13 @@ Cheatsheet has four columns:
 4. **Example** = Minimal code example to demonstrate function; will often make
    use of built-in data from `phyloseq`
 
-See [phyloseq.org](./phyloseq.org) for the cheatsheet.
+| Type    | Function         | Description          | Example                |
+|---------|------------------|----------------------|------------------------|
+| Data    | ~enterotype~     |                      | ~data(enterotype)~     |
+| Data    | ~GlobalPatterns~ |                      | ~data(GlobalPatterns)~ |
+| Data    | ~esophagus~      | Subset of esophageal | ~data(esophagus)~      |
+| Wrangle | ~psmelt~         | Change to data frame | ~psmelt(esophagus)~    |
+
 
 ## License
 

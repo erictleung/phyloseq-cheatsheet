@@ -11,10 +11,10 @@ Cheatsheet has four columns:
 
 | Type    | Function         | Description          | Example                |
 |---------|------------------|----------------------|------------------------|
-| Data    | ~enterotype~     |                      | ~data(enterotype)~     |
-| Data    | ~GlobalPatterns~ |                      | ~data(GlobalPatterns)~ |
-| Data    | ~esophagus~      | Subset of esophageal | ~data(esophagus)~      |
-| Wrangle | ~psmelt~         | Change to data frame | ~psmelt(esophagus)~    |
+| Data    | `enterotype`     |                      | `data(enterotype)`     |
+| Data    | `GlobalPatterns` |                      | `data(GlobalPatterns)` |
+| Data    | `esophagus`      | Subset of esophageal | `data(esophagus)`      |
+| Wrangle | `psmelt`         | Change to data frame | `psmelt(esophagus)`    |
 
 
 ## License

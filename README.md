@@ -2,6 +2,8 @@
 
 Minimal cheatsheet for functions in the phyloseq R package.
 
+![Analysis workflow](https://journals.plos.org/plosone/article/figure/image?size=large&id=10.1371/journal.pone.0061217.g002)
+
 Cheatsheet has four columns:
 1. **Type** = Input, Data, Wrangle, Plot
 2. **Function** = Function as called in script

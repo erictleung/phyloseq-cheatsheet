@@ -2,7 +2,22 @@
 
 Minimal cheatsheet for functions in the phyloseq R package.
 
-![Analysis workflow](https://journals.plos.org/plosone/article/figure/image?size=large&id=10.1371/journal.pone.0061217.g002)
+
+## Workflow
+
+![Analysis workflow](./img/analysis_workflow.png)
+
+<figcaption>Source: https://doi.org/10.1371/journal.pone.0061217.g002</figcaption>
+
+
+## Class accessors
+
+![phyloseq class](./img/phyloseq_class.png)
+
+<figcaption>Source: https://doi.org/10.1371/journal.pone.0061217.g003</figcaption>
+
+
+## Code snippets
 
 Cheatsheet has four columns:
 1. **Type** = Input, Data, Wrangle, Plot

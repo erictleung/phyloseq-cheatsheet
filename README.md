@@ -7,14 +7,16 @@ Minimal cheatsheet for functions in the phyloseq R package.
 
 ![Analysis workflow](./img/analysis_workflow.png)
 
-<figcaption>Source: https://doi.org/10.1371/journal.pone.0061217.g002</figcaption>
+> Attribution: McMurdie, Holmes (2013)
+> https://doi.org/10.1371/journal.pone.0061217.g002
 
 
 ## Class accessors
 
 ![phyloseq class](./img/phyloseq_class.png)
 
-<figcaption>Source: https://doi.org/10.1371/journal.pone.0061217.g003</figcaption>
+> Attribution: McMurdie, Holmes (2013)
+> https://doi.org/10.1371/journal.pone.0061217.g003
 
 
 ## Code snippets

@@ -2,6 +2,12 @@
 
 Minimal cheatsheet for functions in the phyloseq R package.
 
+**Contents**
+
+- [Workflow](#workflow)
+- [Class accessors](#class-accessors)
+- [Code snippets](#code-snippets)
+
 
 ## Workflow
 

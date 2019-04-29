@@ -7,6 +7,7 @@ Minimal cheatsheet for functions in the phyloseq R package.
 - [Workflow](#workflow)
 - [Class accessors](#class-accessors)
 - [Code snippets](#code-snippets)
+- [Insights](#insights)
 
 
 ## Workflow
@@ -41,6 +42,32 @@ Cheatsheet has four columns:
 | Data    | `esophagus`      | Subset of esophageal | `data(esophagus)`      |
 | Wrangle | `psmelt`         | Change to data frame | `psmelt(esophagus)`    |
 
+## Insights
+
+### `prune_*` versus `subset_*`
+
+There is a subtle difference between the `prune_*` and `subset_*` functions.
+
+The `prune_` functions (e.g., `prune_samples()`) keep the set of observations based
+on the data in the phyloseq object itself, such as conditioning on one of the
+columns.
+
+The `subset_` functions (e.g., `subset_samples()`) keep the set of observations based
+auxillary data and/or evaluated expressions. In other words, it is a wrapper function
+around the base R `subset()` function.
+
+Here are some examples:
+
+```r
+# Source: https://joey711.github.io/phyloseq/preprocess.html
+GP.chl <- subset_taxa(GlobalPatterns, Phylum == "Chlamydiae")
+GP.chl <- prune_samples(sample_sums(GP.chl) >= 20, GP.chl)
+```
+
+The `subset_taxa()` function uses the already present `Phylum` column in the taxonomy
+table to subset the data. Meanwhile, the `prune_samples()` function uses an expression
+that evaluates to `TRUE/FALSE` in order to subset the samples. This sort of expression
+could not be evaluated using the `subset_samples()` function
 
 ## License
 

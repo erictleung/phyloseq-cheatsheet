@@ -67,7 +67,91 @@ GP.chl <- prune_samples(sample_sums(GP.chl) >= 20, GP.chl)
 The `subset_taxa()` function uses the already present `Phylum` column in the taxonomy
 table to subset the data. Meanwhile, the `prune_samples()` function uses an expression
 that evaluates to `TRUE/FALSE` in order to subset the samples. This sort of expression
-could not be evaluated using the `subset_samples()` function
+could not be evaluated using the `subset_samples()` function.
+
+### Extracting data frames into tibbles
+
+When extracting data frames from `phyloseq` using accessors like `sample_data()` can
+end up with unintended consequences, as noted here.
+
+In this example, the code shows various ways to access the sample data and converting
+it to a non-`phyloseq` data frame and looking at the dimensions of the object.
+
+Notice the cases when the dimensions go from 26 x 7 to 8 x 8.
+
+``` r
+library(phyloseq)
+library(magrittr)
+library(tibble)
+
+data("GlobalPatterns")
+
+# Natural use but with phyloseq object
+GlobalPatterns %>%
+    sample_data %>%
+    dim()
+#> [1] 26  7
+
+# Using base R
+GlobalPatterns %>%
+    sample_data %>%
+    data.frame() %>%
+    dim()
+#> [1] 26  7
+
+# Using base R "as" convention
+GlobalPatterns %>%
+    sample_data %>%
+    as.data.frame() %>%
+    dim()
+#> [1] 26  7
+
+# Use tibble convention
+GlobalPatterns %>%
+    sample_data() %>%
+    as_tibble() %>%
+    dim()
+#> Warning in class(x) <- c(subclass, tibble_class): Setting class(x) to
+#> multiple strings ("tbl_df", "tbl", ...); result will no longer be an S4
+#> object
+#> [1] 26  7
+
+# Use tibble function to keep row names
+GlobalPatterns %>%
+    sample_data() %>%
+    rownames_to_column() %>%
+    dim()
+#> [1] 8 8
+
+# Using base R and row names to column
+GlobalPatterns %>%
+    sample_data %>%
+    data.frame() %>%
+    rownames_to_column() %>%
+    dim()
+#> [1] 26  8
+
+# Using base R "as" convention and row names to column
+GlobalPatterns %>%
+    sample_data %>%
+    as.data.frame() %>%
+    rownames_to_column() %>%
+    dim()
+#> [1] 8 8
+
+# Use tibble convention and row names to column
+GlobalPatterns %>%
+    sample_data() %>%
+    as_tibble() %>%
+    rownames_to_column() %>%
+    dim()
+#> Warning in class(x) <- c(subclass, tibble_class): Setting class(x) to
+#> multiple strings ("tbl_df", "tbl", ...); result will no longer be an S4
+#> object
+#> [1] 26  8
+```
+
+<sup>Created on 2019-06-17 by the [reprex package](https://reprex.tidyverse.org) (v0.2.1)</sup>
 
 ## License
 

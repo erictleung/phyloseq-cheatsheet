@@ -159,6 +159,7 @@ GlobalPatterns %>%
 
 ## Useful Resources
 
+- [`phyloseq` Official Website](https://joey711.github.io/phyloseq/index.html)
 - [DIY: Public Restroom Bacteria](http://joey711.github.io/phyloseq-demo/Restroom-Biogeography)
 
 

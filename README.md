@@ -8,6 +8,7 @@ Minimal cheatsheet for functions in the phyloseq R package.
 - [Class accessors](#class-accessors)
 - [Code snippets](#code-snippets)
 - [Insights](#insights)
+- [Useful Resources](#useful-resources)
 
 
 ## Workflow
@@ -42,6 +43,7 @@ Cheatsheet has four columns:
 | Data    | `esophagus`      | Subset of esophageal | `data(esophagus)`      |
 | Wrangle | `psmelt`         | Change to data frame | `psmelt(esophagus)`    |
 
+
 ## Insights
 
 ### `prune_*` versus `subset_*`
@@ -68,6 +70,7 @@ The `subset_taxa()` function uses the already present `Phylum` column in the tax
 table to subset the data. Meanwhile, the `prune_samples()` function uses an expression
 that evaluates to `TRUE/FALSE` in order to subset the samples. This sort of expression
 could not be evaluated using the `subset_samples()` function.
+
 
 ### Extracting data frames into tibbles
 
@@ -152,6 +155,12 @@ GlobalPatterns %>%
 ```
 
 <sup>Created on 2019-06-17 by the [reprex package](https://reprex.tidyverse.org) (v0.2.1)</sup>
+
+
+## Useful Resources
+
+- [DIY: Public Restroom Bacteria](http://joey711.github.io/phyloseq-demo/Restroom-Biogeography)
+
 
 ## License
 

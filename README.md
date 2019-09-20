@@ -157,6 +157,14 @@ GlobalPatterns %>%
 <sup>Created on 2019-06-17 by the [reprex package](https://reprex.tidyverse.org) (v0.2.1)</sup>
 
 
+### `prune_*` vs `subset_*` functions
+
+The `prune_*` functions are when the complete samples or OTUs in the object is available.
+Meanwhile, `subset_*` functions use some external information to process the samples.
+
+See https://joey711.github.io/phyloseq/preprocess.html#preprocessing.
+
+
 ## Useful Resources
 
 - [`phyloseq` Official Website](https://joey711.github.io/phyloseq/index.html)

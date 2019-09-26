@@ -163,6 +163,7 @@ GlobalPatterns %>%
 
 - [`phyloseq` Official Website](https://joey711.github.io/phyloseq/index.html)
 - [DIY: Public Restroom Bacteria](http://joey711.github.io/phyloseq-demo/Restroom-Biogeography)
+- [Vignette for phyloseq: Analysis of high-throughput microbiome census data](https://www.bioconductor.org/packages/devel/bioc/vignettes/phyloseq/inst/doc/phyloseq-analysis.html)
 
 
 ## License

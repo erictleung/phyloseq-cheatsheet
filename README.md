@@ -64,11 +64,20 @@ Here are some examples:
 # Source: https://joey711.github.io/phyloseq/preprocess.html
 GP.chl <- subset_taxa(GlobalPatterns, Phylum == "Chlamydiae")
 GP.chl <- prune_samples(sample_sums(GP.chl) >= 20, GP.chl)
+
+# Subset using sample names themselves
+GP.subset <- prune_samples(c("CL3", "CC1", "SV1"), GlobalPatters)
 ```
 
 The `subset_taxa()` function uses the already present `Phylum` column in the taxonomy
-table to subset the data. Meanwhile, the `prune_samples()` function uses an expression
-that evaluates to `TRUE/FALSE` in order to subset the samples. This sort of expression
+table to subset the data. 
+
+Meanwhile, the `prune_samples()` function uses
+
+- an expression that evaluates to `TRUE/FALSE`
+- a character vector of sample names
+
+in order to subset the samples. This sort of expression
 could not be evaluated using the `subset_samples()` function.
 
 See https://joey711.github.io/phyloseq/preprocess.html#preprocessing for more.

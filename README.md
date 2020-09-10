@@ -171,6 +171,56 @@ GlobalPatterns %>%
 <sup>Created on 2019-06-17 by the [reprex package](https://reprex.tidyverse.org) (v0.2.1)</sup>
 
 
+### Creating new variables in data
+
+A common task is to quickly create new variables in the data (e.g., sample data).
+
+Instead of extracting the entire data and the reassigning it, you can simply access the variable itself directly using the `$` accessor.
+
+``` r
+# Load phyloseq and data
+library(phyloseq)
+data("enterotype")
+enterotype
+#> phyloseq-class experiment-level object
+#> otu_table()   OTU Table:         [ 553 taxa and 280 samples ]
+#> sample_data() Sample Data:       [ 280 samples by 9 sample variables ]
+#> tax_table()   Taxonomy Table:    [ 553 taxa by 1 taxonomic ranks ]
+
+# See variables we can change
+head(sample_data(enterotype))
+#>           Enterotype Sample_ID SeqTech  SampleID     Project Nationality Gender
+#> AM.AD.1         <NA>   AM.AD.1  Sanger   AM.AD.1      gill06    american      F
+#> AM.AD.2         <NA>   AM.AD.2  Sanger   AM.AD.2      gill06    american      M
+#> AM.F10.T1       <NA> AM.F10.T1  Sanger AM.F10.T1 turnbaugh09    american      F
+#> AM.F10.T2          3 AM.F10.T2  Sanger AM.F10.T2 turnbaugh09    american      F
+#> DA.AD.1            2   DA.AD.1  Sanger   DA.AD.1     MetaHIT      danish      F
+#> DA.AD.1T        <NA>  DA.AD.1T  Sanger      <NA>        <NA>        <NA>   <NA>
+#>           Age ClinicalStatus
+#> AM.AD.1    28        healthy
+#> AM.AD.2    37        healthy
+#> AM.F10.T1  NA          obese
+#> AM.F10.T2  NA          obese
+#> DA.AD.1    59        healthy
+#> DA.AD.1T   NA           <NA>
+
+# Change variable
+sample_data(enterotype)$Over30 <- sample_data(enterotype)$Age > 30
+
+# See changes
+head(sample_data(enterotype)[, c("Age", "Over30")])
+#>           Age Over30
+#> AM.AD.1    28  FALSE
+#> AM.AD.2    37   TRUE
+#> AM.F10.T1  NA     NA
+#> AM.F10.T2  NA     NA
+#> DA.AD.1    59   TRUE
+#> DA.AD.1T   NA     NA
+```
+
+<sup>Created on 2020-09-10 by the [reprex package](https://reprex.tidyverse.org) (v0.3.0)</sup>
+
+
 ## Useful Resources
 
 - [`phyloseq` Official Website](https://joey711.github.io/phyloseq/index.html)

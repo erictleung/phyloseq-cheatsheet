@@ -29,7 +29,10 @@ Minimal cheatsheet for functions in the phyloseq R package.
 
 ## Code snippets
 
-Cheatsheet has four columns:
+The table here is meant to be a quick look up on how to use common functions.
+
+The table below has four columns:
+
 1. **Type** = Input, Data, Wrangle, Plot
 2. **Function** = Function as called in script
 3. **Description** = Terse description of function

@@ -86,6 +86,33 @@ could not be evaluated using the `subset_samples()` function.
 See https://joey711.github.io/phyloseq/preprocess.html#preprocessing for more.
 
 
+### Using `subset_*` functions
+
+The `subset_*` functions (for example, `subset_samples()`) uses base R's `subset()`
+function. The documentation of this function notes:
+
+> This is a convenience function intended for use interactively. For programming it
+> is better to use the standard subsetting functions like [, and in particular the
+> non-standard evaluation of argument subset can have unanticipated consequences.
+
+In other words, the `subset()` function and `phyloseq::subset_*` function by
+association don't work well within functions.
+
+To get around this, I have been using `phyloseq::prune_samples()` and having code
+prior to it to get the sample names I want based on a boolean check.
+
+**Note**: doesn't run reproducibly (yet), but the sentiment remains.
+
+```r
+# Get sample names
+keep_samples <- sample_data(GlobalPatterns)$sample_name %in% c("CL3", "CC1", "SV1")
+
+# Subset using sample names themselves
+GP.subset <- prune_samples(keep_samples, GlobalPatters)
+```
+
+Source: https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/subset
+
 ### Extracting data frames into tibbles
 
 When extracting data frames from `phyloseq` using accessors like `sample_data()` can
